@@ -37,4 +37,9 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3, 7]);
   });
+
+  it('should throw error when inserting a value already inserted', function() {
+    binarySearchTree.insert(2);
+    expect(function() { binarySearchTree.insert(2); }).to.throw('error');
+  });
 });

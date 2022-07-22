@@ -68,4 +68,8 @@ describe('graph', function() {
     expect(graph.hasEdge(3, 5)).to.equal(true);
     expect(graph.hasEdge(5, 5)).to.equal(true);
   });
+
+  it('should return error when remove is called on node not in graph', function() {
+    expect(function() { graph.removeNode(0); }).to.throw('error');
+  });
 });
